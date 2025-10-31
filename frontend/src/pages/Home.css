@@ -1,0 +1,65 @@
+.home-container {
+    font-family: Inter, sans-serif;
+    background: #f5f7fb;
+    color: #2f3542;
+    min-height: 100vh
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #2f3542;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+    z-index: 10
+}
+
+.btn-login {
+    background: #ffd86b;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    color: #2f3542;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.hero {
+    height: 90vh;
+    background: linear-gradient(135deg, #e1ecff, #f6f9ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 72px
+}
+
+.hero .card {
+    background: #fff;
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .08)
+}
+
+.btn-primary {
+    background: #2f3542;
+    color: #fff;
+    border: none;
+    padding: .8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background: #2f3542;
+    color: #fff
+}
