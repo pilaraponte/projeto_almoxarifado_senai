@@ -42,8 +42,8 @@ export default function Estoque() {
       data,
       usuario_id: Number(usuario.id),
     });
-    if (r.alerta) alert("⚠️ Estoque abaixo do mínimo configurado!");
-    setMsg(`✅ Movimentação registrada. Novo estoque: ${r.novoEstoque}`);
+    if (r.alerta) alert("Estoque abaixo do mínimo configurado!");
+    setMsg(`Movimentação registrada. Novo estoque: ${r.novoEstoque}`);
     setMateriais(insertionSortByName(await api.materiais()));
     setMovs(await api.movimentos());
   }
@@ -51,9 +51,7 @@ export default function Estoque() {
     <div className="estoque-container">
       <div className="estoque-header">
         <h2>Gestão de Estoque</h2>
-        <button className="btn-voltar" onClick={() => nav("/dashboard")}>
-          ← Voltar
-        </button>
+
       </div>
       <div className="mov-form">
         <select value={sel} onChange={(e) => setSel(e.target.value)}>

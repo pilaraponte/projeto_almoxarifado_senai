@@ -6,12 +6,7 @@ export default function Home() {
   const nav = useNavigate();
   return (
     <div className="home-container">
-      <nav className="navbar">
-        <div className="logo">🏷️ Almoxarifado Interno</div>
-        <button className="btn-login" onClick={() => nav("/login")}>
-          Entrar
-        </button>
-      </nav>
+
       <section className="hero">
         <div className="card">
           <h1>Controle de Materiais</h1>
@@ -21,7 +16,7 @@ export default function Home() {
           </button>
         </div>
       </section>
-      <footer className="footer">© 2025 Almoxarifado — React + Prisma</footer>
+      <footer className="footer">© 2025 Almoxarifado SENAI </footer>
     </div>
   );
 }

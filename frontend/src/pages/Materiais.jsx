@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import React from "react";
-
 import { api } from "../api";
-import "./Home.css";
+import "./Materiais.css";
+
 export default function Materiais() {
   const [lista, setLista] = useState([]);
   const [q, setQ] = useState("");
@@ -15,15 +15,16 @@ export default function Materiais() {
     estoque_atual: 0,
   });
   const [edit, setEdit] = useState(null);
+
   async function carregar() {
     setLista(await api.materiais());
   }
+
   useEffect(() => {
     carregar();
   }, []);
-  async function buscar() {
-    setLista(await api.materiais(q));
-  }
+
+ 
   async function salvar() {
     if (!form.nome || !form.categoria)
       return alert("Preencha nome e categoria");
@@ -40,36 +41,28 @@ export default function Materiais() {
     setEdit(null);
     await carregar();
   }
+
   async function excluir(id) {
     if (!confirm("Excluir este material?")) return;
     await api.excluirMaterial(id);
     await carregar();
   }
+
   return (
-    <div style={{ padding: "100px 20px" }}>
+    <div className="materiais-container">
       <h2>Cadastro de Materiais</h2>
-      <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
-        <input
-          placeholder="Buscar..."
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-        />
-        <button className="btn-primary" onClick={buscar}>
-          Buscar
-        </button>
-      </div>
-      <table
-        border="1"
-        cellPadding="6"
-        cellSpacing="0"
-        style={{ width: "100%", margin: "12px 0" }}
-      >
+
+  
+
+
+      {/* Tabela */}
+      <table className="tabela">
         <thead>
           <tr>
             <th>Nome</th>
             <th>Categoria</th>
             <th>Código</th>
-            <th>Custo</th>
+            <th>Custo (R$)</th>
             <th>Mínimo</th>
             <th>Atual</th>
             <th>Ações</th>
@@ -86,6 +79,7 @@ export default function Materiais() {
               <td>{m.estoque_atual}</td>
               <td>
                 <button
+                  className="btn-editar"
                   onClick={() => {
                     setEdit(m);
                     setForm(m);
@@ -93,7 +87,11 @@ export default function Materiais() {
                 >
                   Editar
                 </button>
-                <button onClick={() => excluir(m.id)} style={{ marginLeft: 6 }}>
+                <button
+                  className="btn-excluir"
+                  onClick={() => excluir(m.id)}
+                  style={{ marginLeft: 6 }}
+                >
                   Excluir
                 </button>
               </td>
@@ -101,14 +99,9 @@ export default function Materiais() {
           ))}
         </tbody>
       </table>
-      <h3>{edit ? "Editar" : "Novo"} material</h3>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(6,1fr)",
-          gap: 8,
-        }}
-      >
+ 
+      <h3>{edit ? " Editar Material" : "➕ Novo Material"}</h3>
+      <div className="form-grid">
         <input
           placeholder="Nome"
           value={form.nome}
@@ -147,11 +140,7 @@ export default function Materiais() {
           }
         />
       </div>
-      <button
-        className="btn-primary"
-        style={{ marginTop: 10 }}
-        onClick={salvar}
-      >
+      <button className="btn-primary salvar" onClick={salvar}>
         {edit ? "Salvar alterações" : "Criar material"}
       </button>
     </div>

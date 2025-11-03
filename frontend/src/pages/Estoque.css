@@ -3,7 +3,7 @@
     font-family: Inter, sans-serif;
     background: #f5f7fb;
     min-height: 100vh;
-    color: #2f3542
+    color: #0046b5
 }
 
 .estoque-header {
@@ -18,7 +18,7 @@
     border: none;
     padding: .5rem 1rem;
     border-radius: 8px;
-    color: #2f3542;
+    color: #0046b5;
     font-weight: 700;
     cursor: pointer
 }
@@ -40,7 +40,7 @@
 }
 
 .btn-registrar {
-    background: #2f3542;
+    background: #0046b5;
     color: #fff;
     border: none;
     padding: .7rem 1.2rem;
@@ -75,7 +75,7 @@
 }
 
 .tabela th {
-    background: #2f3542;
+    background: #0046b5;
     color: #fff
 }
 

@@ -29,11 +29,12 @@
     width: 100%;
     padding: .8rem;
     border: none;
-    background: #2f3542;
+    background: #0046b5;
     color: #fff;
     border-radius: 8px;
     font-weight: 700;
-    cursor: pointer
+    cursor: pointer;
+    align-items: center;
 }
 
 .login-err {

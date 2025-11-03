@@ -1,0 +1,102 @@
+.materiais-container {
+  padding: 110px 40px;
+  background: #f4f7fc;
+  min-height: 100vh;
+  color: #0046b5;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.materiais-container h2 {
+  color: #0046b5;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #0046b5;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #003c9a;
+}
+
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 6px rgb(0, 70, 181);
+  margin-bottom: 30px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tabela th {
+  background: #0046b5;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabela td {
+  padding: 10px;
+  border-bottom: 1px solid #e4e8f2;
+}
+
+.tabela tr:hover {
+  background-color: #f1f6ff;
+}
+
+ .btn-editar {
+  background: #00a86b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-editar:hover {
+  background: #008f5e;
+}
+
+.btn-excluir {
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-excluir:hover {
+  background: #c5303b;
+}
+
+ .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-grid input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccd7f2;
+}
+
+.salvar {
+  display: block;
+  margin-top: 10px;
+}
