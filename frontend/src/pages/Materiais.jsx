@@ -24,12 +24,26 @@ export default function Materiais() {
     carregar();
   }, []);
 
- 
   async function salvar() {
     if (!form.nome || !form.categoria)
       return alert("Preencha nome e categoria");
-    if (edit) await api.editarMaterial(edit.id, form);
-    else await api.criarMaterial(form);
+
+    if (edit) {
+      await api.editarMaterial(edit.id, form);
+      // BUG INTENCIONAL: não recarregar a lista após edição
+      setForm({
+        nome: "",
+        categoria: "",
+        codigo: "",
+        custo_unitario: "",
+        estoque_minimo: 0,
+        estoque_atual: 0,
+      });
+      setEdit(null);
+      return; // <- impede chamar carregar() e a UI não reflete a edição
+    }
+
+    await api.criarMaterial(form);
     setForm({
       nome: "",
       categoria: "",
@@ -52,10 +66,19 @@ export default function Materiais() {
     <div className="materiais-container">
       <h2>Cadastro de Materiais</h2>
 
-  
+      <div className="busca-container">
+        <input
+          placeholder="Buscar material..."
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+        />
+        <button className="btn-primary" onClick={async () => {
+          setLista(await api.materiais(q));
+        }}>
+          Buscar
+        </button>
+      </div>
 
-
-      {/* Tabela */}
       <table className="tabela">
         <thead>
           <tr>
@@ -99,7 +122,7 @@ export default function Materiais() {
           ))}
         </tbody>
       </table>
- 
+
       <h3>{edit ? " Editar Material" : "➕ Novo Material"}</h3>
       <div className="form-grid">
         <input

@@ -10,7 +10,7 @@ export default function Navbar() {
 
   function sair() {
     localStorage.removeItem("usuario");
-    nav("/login");
+    nav("/");
   }
 
   function voltar() {
@@ -24,8 +24,10 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar__logo" onClick={() => nav("/")}>
-        Almoxarifado SENAI
+      <div className="navbar__logo">Almoxarifado</div>
+
+      <div className="navbar__center">
+        <img src="/logo.png" alt="Logo SENAI" className="navbar__img" />
       </div>
 
       <div className="navbar__auth">

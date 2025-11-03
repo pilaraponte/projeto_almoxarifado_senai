@@ -6,19 +6,30 @@
   align-items: center;
   padding: 14px 32px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      font-family: Inter, sans-serif;
-
+  font-family: Inter, sans-serif;
 }
 
 .navbar__logo {
   font-size: 1.4rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.2s;
 }
 
-.navbar__logo:hover {
-  opacity: 0.8;
+.navbar__center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__img {
+  width: 70px;
+  height: auto;
+}
+
+.navbar__auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .navbar__btn {
@@ -35,10 +46,4 @@
 .navbar__btn:hover {
   background-color: #003a94;
   color: #fff;
-}
-
-.navbar__auth {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }

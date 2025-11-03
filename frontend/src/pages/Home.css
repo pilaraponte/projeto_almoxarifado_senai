@@ -1,3 +1,9 @@
+html, body {
+    overflow: hidden;
+    height: 100%;
+    background: linear-gradient(135deg, #e1ecff, #f6f9ff);
+}
+
 .home-container {
     font-family: Inter, sans-serif;
     background: #f5f7fb;
@@ -31,8 +37,7 @@
 }
 
 .hero {
-    height: 90vh;
-    background: linear-gradient(135deg, #e1ecff, #f6f9ff);
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
